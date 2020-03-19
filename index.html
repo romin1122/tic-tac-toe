@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TIC TAC TOE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../lib/debug/eruda.js"></script>
+    <script>eruda.init()</script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div id="details">
+      <p id='po'></p>
+      <p id='name'><span class="one">T</span><span class="two">I</span><span class="one">C</span><span class="two">-</span><span class="one">T</span><span class="two">A</span><span class="one">C</span><span class="two">-</span><span class="one">T</span><span class="two">O</span><span class="one">E</span></p>
+      <p id='px'></p>
+    </div>
+    <br>
+    <div id="container">
+      <div class="boxes" id="b00" onclick="Board.properMark(0,0)">  </div>
+      <div class="boxes" id="b01" onclick="Board.properMark(0,1)">  </div>
+      <div class="boxes" id="b02" onclick="Board.properMark(0,2)">  </div>
+      <div class="boxes" id="b10" onclick="Board.properMark(1,0)">  </div>
+      <div class="boxes" id="b11" onclick="Board.properMark(1,1)">  </div>
+      <div class="boxes" id="b12" onclick="Board.properMark(1,2)">  </div>
+      <div class="boxes" id="b20" onclick="Board.properMark(2,0)">  </div>
+      <div class="boxes" id="b21" onclick="Board.properMark(2,1)">  </div>
+      <div class="boxes" id="b22" onclick="Board.properMark(2,2)">  </div>
+      
+    </div>
+    <div id="start">
+      <p id='startName'><span class="one">T</span><span class="two">I</span><span class="one">C</span><span class="two">-</span><span class="one">T</span><span class="two">A</span><span class="one">C</span><span class="two">-</span><span class="one">T</span><span class="two">O</span><span class="one">E</span></p>
+      <p id="playerNoLabel" align="center" class="two">Choose number of Players: </p><br>
+      <select id="playerNo" onchange="dom.selectPlayer()">
+        <option value="two">Two</option>
+        <option value="one">One</option>
+      </select>
+      <input class="one" id="p1input" type="text" placeholder="Player 1 Name">
+      <input class="two" id="p2input" type="text" placeholder="Player 2 Name">
+      <br>
+      <button id='startBtn' onclick="dom.start()">START</button>
+    </div>
+    <div id="result">
+      <p id='winner' align='center'>Congratulations playero,<br> you won against playerx</p>
+      <button id="restart" onclick="Board.initialize()">RESTART</button>
+      <br>
+      <button id="home" onclick="dom.home()">HOME</button>
+    </div>
+  </body>
+</html>
